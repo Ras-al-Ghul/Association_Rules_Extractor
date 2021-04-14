@@ -29,10 +29,10 @@ def main():
     # data is a list of sets
 
     frequent_itemsets, supports = apriori.get_itemsets(data, min_sup)
-    helpers.print_itemsets(frequent_itemsets, supports)
+    helpers.print_itemsets(frequent_itemsets, supports, min_sup)
 
     rules = apriori.select_rules(frequent_itemsets, supports, min_conf)
-    helpers.print_rules(rules)
+    helpers.print_rules(rules, min_conf)
 
 
 if __name__ == '__main__':
