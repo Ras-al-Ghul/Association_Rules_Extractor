@@ -16,46 +16,61 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
 <li>apriori.py</li>
 <li>helper.py</li>
 <li>README.md</li>
-<li>requirements.txt</li>
 </ol>
 
 ## Steps to install and run
 
-<p>Install the rquirements from requirements.txt using the below command.</p>
+<p>There are no external modules required for this program. Run the program using the following command (from just outside the module directory). INTEGRATED_DATASET.csv could be replaced with any other data file placed in the "data/" dir.</p>
 
 ```
- pip3 install -r requirements.txt
+python3 -m Association_Rules_Extractor INTEGRATED_DATASET.csv <min_sup> <min_conf>
 ```
-
-<p>Run the program using the following command.</p>
-
-```
-python3 -m Association_Rules_Extractor <support> <confidence>
-```
-<p>Where query is a string of words that you want to search and precision is a decimal value. For example,</p>
-
-```
-python3 -m Association_Rules_Extractor 0.
-```
-
-If you want to generate the INTEGRATED_DATASET.csv using script.py, please download the below given dataset as a csv file, place it in "data" folder and run the script.py
+If you want to generate the INTEGRATED_DATASET.csv using script.py, please download the dataset below as a csv file, place it in "data/" directory and run the script.py
 
 ## Dataset used:
 NYPD Motor Vehicle Collisions Summary:
 https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/m666-sf2m
 
+## Why is this dataset interesting?:
+<p>This dataset has more than a million rows with NYC's motor vehicle collision data over the years (up until the current day). The dataset has the following columns (relevant columns are listed together):
+</p>  
+<ol>
+<li> Crash Date and Time of the day</li>
+<li> Borough and Zip Code</li>
+<li> Latitude, Longitude, Location</li>
+<li> On street name, Off street name, Cross street name</li>
+<li> Number of persons injured, N persons killed, N {pedestrians, cyclist, motorist} {injured, killed} </li>
+<li> Contributing factor vehicle {1,2,3,4,5} - Turning improperly, Following too closely, etc. </li>
+<li> Collision ID </li>
+<li> Vehicle type code {1,2,3,4,5} - ATV, bicycle, sedan, SUV, etc. </li>
+</ol>
+<p>It would be interesting to mine information about the frequent types of collisions, where they occur, at what time of the day they occur, common number of injuries/fatalities, the most frequent contributing factors, and the most common vehicle types involved in accidents.</p>
+
 ## Initial processing of data to generate INTEGRATED_DATASET.csv:
-1. Columns chosen along with the processing done:
-- The data of <b>year>=2017</b> is considered 
-- <b>Time at which the crash occured:</b> bin the CRASH TIME column into early-morning (4<=hour<=6), morning (7<=hour<=11), afternoon(12<=hour<=15) and night(19<=hour<=3), where hour is the hour in which accident occured. hour is the hour picked as interger after splitting the CRASH TIME with ':'
+Some columns are too granular and would not yield meaningful information in this setting. Hence columns like Street names, number of cyclists, pedestrians, motorists who are injured, killed are omitted. Columns chosen along with the processing done are as follows:
+- The data of <b>year>=2018</b> is considered to restrict the data to ~500k samples.
+- <b>Time at which the crash occured:</b> We bin the CRASH TIME column into early-morning (4<=hour<=6), morning (7<=hour<=11), afternoon(12<=hour<=15) and night(19<=hour<=3), where hour is the hour in which accident occured. hour is the hour picked as integer after splitting the CRASH TIME with ':'
 - <b>Borough:</b> Picked from BOROUGH column. the string is stripped, converted to lower characters, all ' ','/' are replaced with '_'. if column is empty nothing is added to the row.
 - <b>Zipcode:</b> Picked from ZIP CODE column. If column is empty nothing is added to the row.
 - <b>Injured:</b> Picked up from NUMBER OF PERSONS INJURED column. 'person_injured' is added to the row if the columns value is > 0.
-- <b>Killed:</b> Picked up from NUMBER OF PERSONS CYCLIST KILLED column. 'person_killed' is added to the row if the column value is > 0. If the column value is empty, nothing is added to the row.
+- <b>Killed:</b> Picked up from NUMBER OF PERSONS KILLED column. 'person_killed' is added to the row if the column value is > 0.
 - <b>Reason:</b> Picked up from CONTRIBUTING FACTOR VEHICLE 1 column. If CONTRIBUTING FACTOR VEHICLE 1 is 'Unspecified' or empty, value is picked up from CONTRIBUTING FACTOR VEHICLE 2. If CONTRIBUTING FACTOR VEHICLE 2 is also 'Unspecified' or empty, nothing is added to the row. The string value added to the row is stripped and the ' ' and '/' characters are replaced with '_'
-- <b>Kind of vehicles:</b> Picked up from VEHICLE TYPE CODE 1 and VEHICLE TYPE CODE 2. If both the columns are empty nothing is added to the row. The string values added to the row are stripped and ' ' and '/' are replaced with '_'.
+- <b>Type of vehicles:</b> Picked up from VEHICLE TYPE CODE 1 and VEHICLE TYPE CODE 2. If both the columns are empty nothing is added to the row. The string values added to the row are stripped and ' ' and '/' are replaced with '_'.
 
 
 ## Algorithm
+We use the Apriori algorithm mentioned in section 2.1 of the Agrawal et. al VLDB '94 paper. The candidate generation follows the algorithm mentioned in section 2.1.1. with the join and prune steps. We make use of Python frozensets as keys to store candidates and supports. The entire program and dataset fits into main memory and completes execution in around ~30 seconds of time for values of min_sup and min_conf that are not too small.
 
+To scale it even further, one could use a sqlite database so that the entire dataset need not be stored in the main memory at once. However this comes at the cost of greater runtime. Another idea would be to use SHA hash representations of frozensets to further limit memory needs, however hashes are one way functions.  
+
+One of the important parts of this project is to split the columns into reasonably sized granularity in order to extract meaningful associations. We tried and tested various splits for Time of the day, Injured and Killed person data, Street names and have chosen to stick with ones that seem to provide meaningful relations.
+
+## Command line specification of a compelling run:
+
+```
+python3 -m Association_Rules_Extractor INTEGRATED_DATASET.csv 0.05 0.1
+```
+This would give a lot of data from which we could make conclusions.
+
+## Conclusions from the above run:
 
