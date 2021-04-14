@@ -9,6 +9,7 @@ def select_rules(frequent_itemsets, supports, min_conf):
 				confidence = support/supports[left]
 				if confidence >= min_conf:
 					assoc_rules.append((left, right, confidence, support))
+	return assoc_rules
 
 
 def get_candidates(itemset, L_k):
@@ -29,6 +30,7 @@ def get_candidates(itemset, L_k):
 		for s in subsets:
 			if s not in L_k:
 				candidates.remove(c)
+				break
 
 	return candidates
 
@@ -37,7 +39,7 @@ def get_supports(data, candidates):
 	keys = [frozenset(c) for c in candidates]
 	candidates_support = {k:0 for k in keys}
 	for idx, item in enumerate(data):
-		for idx1, c in candidates:
+		for idx1, c in enumerate(candidates):
 			if c.issubset(item):
 				candidates_support[keys[idx1]] += 1
 
