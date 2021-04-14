@@ -38,7 +38,7 @@ python3 -m Association_Rules_Extractor <support> <confidence>
 python3 -m Association_Rules_Extractor 0.
 ```
 
-If you want to generate the INTEGRATED_DATASET.csv using script.py, please download the below given dataset and place it in data folder and run the script.py
+If you want to generate the INTEGRATED_DATASET.csv using script.py, please download the below given dataset as a csv file, place it in "data" folder and run the script.py
 
 ## Dataset used:
 NYPD Motor Vehicle Collisions Summary:
