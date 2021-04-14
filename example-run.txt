@@ -1,147 +1,128 @@
-==Frequent itemsets (min_sup=3.0%)
+==Frequent itemsets (min_sup=5.0%)
 ['sedan'], 63.8%
 ['suv'], 51.19%
 ['evening'], 25.39%
 ['driver_inattention_distraction'], 24.79%
 ['afternoon'], 24.58%
 ['morning'], 24.04%
-['suv', 'sedan'], 22.75%
+['sedan', 'suv'], 22.75%
 ['person_injured'], 21.68%
 ['night'], 21.1%
 ['brooklyn'], 20.69%
 ['queens'], 17.85%
-['evening', 'sedan'], 16.56%
-['driver_inattention_distraction', 'sedan'], 15.97%
-['afternoon', 'sedan'], 15.38%
-['morning', 'sedan'], 14.56%
-['night', 'sedan'], 14.2%
-['evening', 'suv'], 13.5%
-['brooklyn', 'sedan'], 13.37%
+['sedan', 'evening'], 16.56%
+['sedan', 'driver_inattention_distraction'], 15.97%
+['sedan', 'afternoon'], 15.38%
+['sedan', 'morning'], 14.56%
+['sedan', 'night'], 14.2%
+['suv', 'evening'], 13.5%
+['sedan', 'brooklyn'], 13.37%
 ['suv', 'driver_inattention_distraction'], 13.22%
-['person_injured', 'sedan'], 12.99%
+['sedan', 'person_injured'], 12.99%
 ['afternoon', 'suv'], 12.95%
 ['manhattan'], 12.66%
 ['suv', 'morning'], 12.5%
-['queens', 'sedan'], 11.57%
+['sedan', 'queens'], 11.57%
 ['brooklyn', 'suv'], 10.52%
 ['bronx'], 10.38%
-['person_injured', 'suv'], 10.17%
-['queens', 'suv'], 10.14%
-['night', 'suv'], 9.91%
+['suv', 'person_injured'], 10.17%
+['suv', 'queens'], 10.14%
+['suv', 'night'], 9.91%
 ['following_too_closely'], 9.01%
 ['taxi'], 7.08%
-['manhattan', 'sedan'], 6.93%
+['sedan', 'manhattan'], 6.93%
 ['failure_to_yield_right-of-way'], 6.88%
-['bronx', 'sedan'], 6.72%
-['evening', 'driver_inattention_distraction'], 6.47%
-['evening', 'suv', 'sedan'], 6.31%
-['suv', 'driver_inattention_distraction', 'sedan'], 6.21%
+['sedan', 'bronx'], 6.72%
+['driver_inattention_distraction', 'evening'], 6.47%
+['sedan', 'suv', 'evening'], 6.31%
+['sedan', 'suv', 'driver_inattention_distraction'], 6.21%
 ['afternoon', 'driver_inattention_distraction'], 6.18%
-['following_too_closely', 'sedan'], 6.08%
-['morning', 'driver_inattention_distraction'], 5.77%
+['sedan', 'following_too_closely'], 6.08%
+['driver_inattention_distraction', 'morning'], 5.77%
 ['evening', 'person_injured'], 5.76%
-['person_injured', 'driver_inattention_distraction'], 5.65%
-['afternoon', 'suv', 'sedan'], 5.63%
-['person_injured', 'night'], 5.4%
-['evening', 'brooklyn'], 5.36%
+['driver_inattention_distraction', 'person_injured'], 5.65%
+['sedan', 'afternoon', 'suv'], 5.63%
+['night', 'person_injured'], 5.4%
+['brooklyn', 'evening'], 5.36%
 ['pick-up_truck'], 5.36%
-['following_too_closely', 'suv'], 5.35%
+['suv', 'following_too_closely'], 5.35%
 ['brooklyn', 'afternoon'], 5.31%
-['manhattan', 'suv'], 5.31%
-['night', 'driver_inattention_distraction'], 5.17%
-['suv', 'morning', 'sedan'], 5.06%
-['suv', 'bronx'], 5.04%
-['brooklyn', 'morning'], 4.97%
-['person_injured', 'afternoon'], 4.91%
-['early_morning'], 4.89%
-['queens', 'driver_inattention_distraction'], 4.88%
-['night', 'suv', 'sedan'], 4.77%
-['queens', 'suv', 'sedan'], 4.71%
-['evening', 'queens'], 4.66%
-['person_injured', 'brooklyn'], 4.65%
-['brooklyn', 'driver_inattention_distraction'], 4.6%
-['backing_unsafely'], 4.55%
-['brooklyn', 'suv', 'sedan'], 4.52%
-['person_injured', 'morning'], 4.44%
-['queens', 'afternoon'], 4.43%
-['failure_to_yield_right-of-way', 'sedan'], 4.43%
-['passing_or_lane_usage_improper'], 4.41%
-['queens', 'morning'], 4.31%
-['evening', 'driver_inattention_distraction', 'sedan'], 4.26%
-['brooklyn', 'night'], 4.22%
-['person_injured', 'suv', 'sedan'], 4.17%
-['passing_too_closely'], 4.1%
-['box_truck'], 4.04%
-['afternoon', 'driver_inattention_distraction', 'sedan'], 3.93%
-['person_injured', 'queens'], 3.77%
-['failure_to_yield_right-of-way', 'suv'], 3.71%
-['manhattan', 'driver_inattention_distraction'], 3.61%
-['night', 'queens'], 3.56%
-['evening', 'brooklyn', 'sedan'], 3.55%
-['evening', 'driver_inattention_distraction', 'suv'], 3.55%
-['morning', 'driver_inattention_distraction', 'sedan'], 3.54%
-['night', 'driver_inattention_distraction', 'sedan'], 3.49%
-['person_injured', 'driver_inattention_distraction', 'sedan'], 3.42%
-['person_injured', 'night', 'sedan'], 3.41%
-['evening', 'person_injured', 'sedan'], 3.41%
-['driver_inattention_distraction', 'afternoon', 'suv'], 3.38%
-['unsafe_lane_changing'], 3.34%
-['brooklyn', 'afternoon', 'sedan'], 3.33%
-['queens', 'driver_inattention_distraction', 'sedan'], 3.21%
-['manhattan', 'afternoon'], 3.18%
-['morning', 'suv', 'driver_inattention_distraction'], 3.17%
-['early_morning', 'sedan'], 3.09%
-['evening', 'queens', 'sedan'], 3.08%
-['brooklyn', 'morning', 'sedan'], 3.04%
-['manhattan', 'morning'], 3.01%
-==High-confidence association rules (min_conf=40.0%)
+['suv', 'manhattan'], 5.31%
+['driver_inattention_distraction', 'night'], 5.17%
+['sedan', 'suv', 'morning'], 5.06%
+['bronx', 'suv'], 5.04%
+==High-confidence association rules (min_conf=10.0%)
 ['following_too_closely'] => ['sedan'] (Conf: 67.42%, Supp: 6.08%)
-['night', 'driver_inattention_distraction'] => ['sedan'] (Conf: 67.4%, Supp: 3.49%)
 ['night'] => ['sedan'] (Conf: 67.29%, Supp: 14.2%)
-['evening', 'brooklyn'] => ['sedan'] (Conf: 66.24%, Supp: 3.55%)
-['evening', 'queens'] => ['sedan'] (Conf: 66.07%, Supp: 3.08%)
-['evening', 'driver_inattention_distraction'] => ['sedan'] (Conf: 65.82%, Supp: 4.26%)
-['queens', 'driver_inattention_distraction'] => ['sedan'] (Conf: 65.67%, Supp: 3.21%)
 ['evening'] => ['sedan'] (Conf: 65.24%, Supp: 16.56%)
 ['queens'] => ['sedan'] (Conf: 64.8%, Supp: 11.57%)
 ['bronx'] => ['sedan'] (Conf: 64.72%, Supp: 6.72%)
 ['brooklyn'] => ['sedan'] (Conf: 64.63%, Supp: 13.37%)
 ['driver_inattention_distraction'] => ['sedan'] (Conf: 64.44%, Supp: 15.97%)
-['failure_to_yield_right-of-way'] => ['sedan'] (Conf: 64.34%, Supp: 4.43%)
-['afternoon', 'driver_inattention_distraction'] => ['sedan'] (Conf: 63.63%, Supp: 3.93%)
-['early_morning'] => ['sedan'] (Conf: 63.23%, Supp: 3.09%)
-['person_injured', 'night'] => ['sedan'] (Conf: 63.22%, Supp: 3.41%)
-['brooklyn', 'afternoon'] => ['sedan'] (Conf: 62.68%, Supp: 3.33%)
 ['afternoon'] => ['sedan'] (Conf: 62.57%, Supp: 15.38%)
-['morning', 'driver_inattention_distraction'] => ['sedan'] (Conf: 61.27%, Supp: 3.54%)
-['brooklyn', 'morning'] => ['sedan'] (Conf: 61.06%, Supp: 3.04%)
 ['morning'] => ['sedan'] (Conf: 60.57%, Supp: 14.56%)
-['person_injured', 'driver_inattention_distraction'] => ['sedan'] (Conf: 60.47%, Supp: 3.42%)
 ['person_injured'] => ['sedan'] (Conf: 59.93%, Supp: 12.99%)
 ['following_too_closely'] => ['suv'] (Conf: 59.41%, Supp: 5.35%)
-['evening', 'person_injured'] => ['sedan'] (Conf: 59.24%, Supp: 3.41%)
 ['queens'] => ['suv'] (Conf: 56.79%, Supp: 10.14%)
-['morning', 'driver_inattention_distraction'] => ['suv'] (Conf: 54.95%, Supp: 3.17%)
-['evening', 'driver_inattention_distraction'] => ['suv'] (Conf: 54.92%, Supp: 3.55%)
 ['manhattan'] => ['sedan'] (Conf: 54.73%, Supp: 6.93%)
-['driver_inattention_distraction', 'afternoon'] => ['suv'] (Conf: 54.72%, Supp: 3.38%)
-['failure_to_yield_right-of-way'] => ['suv'] (Conf: 53.91%, Supp: 3.71%)
 ['driver_inattention_distraction'] => ['suv'] (Conf: 53.34%, Supp: 13.22%)
 ['evening'] => ['suv'] (Conf: 53.19%, Supp: 13.5%)
 ['afternoon'] => ['suv'] (Conf: 52.71%, Supp: 12.95%)
 ['morning'] => ['suv'] (Conf: 52.0%, Supp: 12.5%)
 ['brooklyn'] => ['suv'] (Conf: 50.82%, Supp: 10.52%)
 ['bronx'] => ['suv'] (Conf: 48.53%, Supp: 5.04%)
-['night', 'suv'] => ['sedan'] (Conf: 48.1%, Supp: 4.77%)
 ['night'] => ['suv'] (Conf: 46.97%, Supp: 9.91%)
 ['suv', 'driver_inattention_distraction'] => ['sedan'] (Conf: 46.96%, Supp: 6.21%)
 ['person_injured'] => ['suv'] (Conf: 46.89%, Supp: 10.17%)
-['evening', 'suv'] => ['sedan'] (Conf: 46.71%, Supp: 6.31%)
-['queens', 'suv'] => ['sedan'] (Conf: 46.5%, Supp: 4.71%)
+['suv', 'evening'] => ['sedan'] (Conf: 46.71%, Supp: 6.31%)
 ['suv'] => ['sedan'] (Conf: 44.45%, Supp: 22.75%)
 ['afternoon', 'suv'] => ['sedan'] (Conf: 43.44%, Supp: 5.63%)
-['brooklyn', 'suv'] => ['sedan'] (Conf: 43.0%, Supp: 4.52%)
 ['manhattan'] => ['suv'] (Conf: 41.94%, Supp: 5.31%)
-['person_injured', 'suv'] => ['sedan'] (Conf: 40.99%, Supp: 4.17%)
-['queens', 'sedan'] => ['suv'] (Conf: 40.76%, Supp: 4.71%)
 ['suv', 'morning'] => ['sedan'] (Conf: 40.49%, Supp: 5.06%)
+['sedan', 'driver_inattention_distraction'] => ['suv'] (Conf: 38.88%, Supp: 6.21%)
+['sedan', 'evening'] => ['suv'] (Conf: 38.08%, Supp: 6.31%)
+['sedan', 'afternoon'] => ['suv'] (Conf: 36.6%, Supp: 5.63%)
+['sedan'] => ['suv'] (Conf: 35.66%, Supp: 22.75%)
+['sedan', 'morning'] => ['suv'] (Conf: 34.77%, Supp: 5.06%)
+['sedan', 'suv'] => ['evening'] (Conf: 27.72%, Supp: 6.31%)
+['sedan', 'suv'] => ['driver_inattention_distraction'] (Conf: 27.29%, Supp: 6.21%)
+['person_injured'] => ['evening'] (Conf: 26.55%, Supp: 5.76%)
+['suv'] => ['evening'] (Conf: 26.38%, Supp: 13.5%)
+['driver_inattention_distraction'] => ['evening'] (Conf: 26.1%, Supp: 6.47%)
+['person_injured'] => ['driver_inattention_distraction'] (Conf: 26.07%, Supp: 5.65%)
+['sedan'] => ['evening'] (Conf: 25.96%, Supp: 16.56%)
+['brooklyn'] => ['evening'] (Conf: 25.93%, Supp: 5.36%)
+['suv'] => ['driver_inattention_distraction'] (Conf: 25.83%, Supp: 13.22%)
+['brooklyn'] => ['afternoon'] (Conf: 25.68%, Supp: 5.31%)
+['night'] => ['person_injured'] (Conf: 25.57%, Supp: 5.4%)
+['evening'] => ['driver_inattention_distraction'] (Conf: 25.48%, Supp: 6.47%)
+['suv'] => ['afternoon'] (Conf: 25.31%, Supp: 12.95%)
+['afternoon'] => ['driver_inattention_distraction'] (Conf: 25.16%, Supp: 6.18%)
+['sedan'] => ['driver_inattention_distraction'] (Conf: 25.03%, Supp: 15.97%)
+['driver_inattention_distraction'] => ['afternoon'] (Conf: 24.95%, Supp: 6.18%)
+['person_injured'] => ['night'] (Conf: 24.89%, Supp: 5.4%)
+['sedan', 'suv'] => ['afternoon'] (Conf: 24.73%, Supp: 5.63%)
+['night'] => ['driver_inattention_distraction'] (Conf: 24.51%, Supp: 5.17%)
+['suv'] => ['morning'] (Conf: 24.43%, Supp: 12.5%)
+['sedan'] => ['afternoon'] (Conf: 24.1%, Supp: 15.38%)
+['morning'] => ['driver_inattention_distraction'] (Conf: 24.0%, Supp: 5.77%)
+['driver_inattention_distraction'] => ['morning'] (Conf: 23.28%, Supp: 5.77%)
+['sedan'] => ['morning'] (Conf: 22.83%, Supp: 14.56%)
+['driver_inattention_distraction'] => ['person_injured'] (Conf: 22.8%, Supp: 5.65%)
+['evening'] => ['person_injured'] (Conf: 22.67%, Supp: 5.76%)
+['sedan'] => ['night'] (Conf: 22.26%, Supp: 14.2%)
+['sedan', 'suv'] => ['morning'] (Conf: 22.25%, Supp: 5.06%)
+['afternoon'] => ['brooklyn'] (Conf: 21.62%, Supp: 5.31%)
+['evening'] => ['brooklyn'] (Conf: 21.13%, Supp: 5.36%)
+['sedan'] => ['brooklyn'] (Conf: 20.96%, Supp: 13.37%)
+['driver_inattention_distraction'] => ['night'] (Conf: 20.86%, Supp: 5.17%)
+['suv'] => ['brooklyn'] (Conf: 20.54%, Supp: 10.52%)
+['sedan'] => ['person_injured'] (Conf: 20.37%, Supp: 12.99%)
+['suv'] => ['person_injured'] (Conf: 19.86%, Supp: 10.17%)
+['suv'] => ['queens'] (Conf: 19.81%, Supp: 10.14%)
+['suv'] => ['night'] (Conf: 19.36%, Supp: 9.91%)
+['sedan'] => ['queens'] (Conf: 18.13%, Supp: 11.57%)
+['sedan'] => ['manhattan'] (Conf: 10.87%, Supp: 6.93%)
+['sedan'] => ['bronx'] (Conf: 10.53%, Supp: 6.72%)
+['suv'] => ['following_too_closely'] (Conf: 10.46%, Supp: 5.35%)
+['suv'] => ['manhattan'] (Conf: 10.38%, Supp: 5.31%)
