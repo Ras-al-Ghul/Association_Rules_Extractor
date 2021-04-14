@@ -25,7 +25,7 @@ def main():
         return
 
     data = helpers.load_csv()
-    #print(data)
+    # print(data)
     # data is a list of sets
 
     frequent_itemsets, supports = apriori.get_itemsets(data, min_sup)
