@@ -55,7 +55,7 @@ Some columns are too granular and would not yield meaningful information in this
 - <b>Injured:</b> Picked up from NUMBER OF PERSONS INJURED column. 'person_injured' is added to the row if the columns value is > 0.
 - <b>Killed:</b> Picked up from NUMBER OF PERSONS KILLED column. 'person_killed' is added to the row if the column value is > 0.
 - <b>Reason:</b> Picked up from CONTRIBUTING FACTOR VEHICLE 1 column. If CONTRIBUTING FACTOR VEHICLE 1 is 'Unspecified' or empty, value is picked up from CONTRIBUTING FACTOR VEHICLE 2. If CONTRIBUTING FACTOR VEHICLE 2 is also 'Unspecified' or empty, nothing is added to the row. The string value added to the row is stripped and the ' ' and '/' characters are replaced with '_'
-- <b>Type of vehicles:</b> Picked up from VEHICLE TYPE CODE 1 and VEHICLE TYPE CODE 2. If both the columns are empty nothing is added to the row. The string values added to the row are stripped and ' ' and '/' are replaced with '_'.
+- <b>Type of vehicles:</b> Picked up from VEHICLE TYPE CODE 1 and VEHICLE TYPE CODE 2. If both the columns are empty nothing is added to the row. The string values added to the row are stripped and ' ' and '/' are replaced with '_'. If vehicle names are 'station_wagon' or 'sport_utility_vehicle' or 'suv', the values are all set as 'suv' in the row.
 
 
 ## Algorithm
