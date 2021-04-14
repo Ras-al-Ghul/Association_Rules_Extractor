@@ -1,8 +1,8 @@
 
 import csv, os
 
-def load_csv():
-	with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/INTEGRATED_DATASET.csv'), newline='') as csvfile:
+def load_csv(dataset):
+	with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/{}'.format(dataset)), newline='') as csvfile:
 		datareader = csv.reader(csvfile, delimiter=',')
 		next(datareader)
 

@@ -1,31 +1,23 @@
 import sys
-import time
 
 from . import helpers
 from . import apriori
 
 def main():
     
-    # if len(sys.argv) < 4:
-    #     print('Usage: python3 -m Association_Rules_Extractor <dataset> <min_sup> <min_conf>')
-    #     return
-    #
-    # dataset = sys.argv[1]
-
-    # min_sup, min_conf = float(sys.argv[2]), float(sys.argv[3])
-
-    if len(sys.argv) < 3:
-        print('Usage: python3 -m Association_Rules_Extractor <min_sup> <min_conf>')
+    if len(sys.argv) < 4:
+        print('Usage: python3 -m Association_Rules_Extractor <dataset> <min_sup> <min_conf>')
         return
+    
+    dataset = sys.argv[1]
 
-    min_sup, min_conf = float(sys.argv[1]), float(sys.argv[2])
+    min_sup, min_conf = float(sys.argv[2]), float(sys.argv[3])
     
     if min_sup < 0 or min_sup > 1 or min_conf < 0 or min_conf > 1:
         print('min_sup and min_conf must be floats in [0,1]')
         return
 
-    data = helpers.load_csv()
-    # print(data)
+    data = helpers.load_csv(dataset)
     # data is a list of sets
 
     frequent_itemsets, supports = apriori.get_itemsets(data, min_sup)
