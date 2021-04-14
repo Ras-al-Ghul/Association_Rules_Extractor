@@ -7,17 +7,11 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
   <ul>
     <li>__init__.py</li>
     <li>__main__.py</li>
-    <li>config.py</li>
-    <li>indexer.py</li>
-    <li>rocchio.py</li>
-    <li>search_scrape.py</li>
+    <li>apriori.py</li>
   </ul>
 </li>
 <li>README.md</li>
 <li>requirements.txt</li>
-<li>setup.py</li>
-<li>stop_words.txt</li>
-<li>test_queries_transcript.txt</li>
 </ol>
 
 ## Steps to install and run
