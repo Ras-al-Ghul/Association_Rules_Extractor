@@ -1,3 +1,5 @@
+# Project done by
+Dipankar Niranjan dn2502, Nidheesha Amedapu nra2125
 # Association_Rules_Extractor
 Code to extract Association Rules from a dataset using the Apriori algorithm
 
