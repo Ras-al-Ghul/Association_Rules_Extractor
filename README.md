@@ -75,3 +75,21 @@ This would give a lot of data from which we could make conclusions.
 
 ## Conclusions from the above run:
 
+## Conclusions from the above run:
+
+Some interesting mined associations are:
+<ol>
+<li> ['following_too_closely'] => ['sedan'] (Conf: 67.42%, Supp: 6.08%) </li>
+<li> ['night'] => ['sedan'] (Conf: 67.29%, Supp: 14.2%) </li>
+<li> ['queens'] => ['sedan'] (Conf: 64.8%, Supp: 11.57%) </li>
+<li> ['driver_inattention_distraction'] => ['sedan'] (Conf: 64.44%, Supp: 15.97%) </li>
+<li> ['person_injured'] => ['sedan'] (Conf: 59.93%, Supp: 12.99%)</li>
+<li> ['following_too_closely'] => ['suv'] (Conf: 59.41%, Supp: 5.35%)</li>
+<li> ['queens'] => ['suv'] (Conf: 56.79%, Supp: 10.14%) </li>
+<li> ['driver_inattention_distraction'] => ['suv'] (Conf: 53.34%, Supp: 13.22%) </li>
+<li> ['evening'] => ['suv'] (Conf: 53.19%, Supp: 13.5%)</li>
+<li> ['person_injured'] => ['suv'] (Conf: 46.89%, Supp: 10.17%) </li>
+<li> ['sedan', 'driver_inattention_distraction'] => ['suv'] (Conf: 38.88%, Supp: 6.21%) </li>
+</ol>
+
+Overall, following too closely and driver inattention distraction are the most common reasons for crashes, while suvs and sedans are the most common vehicle types involved in crashes. Persons are more often injured than killed. Queens seems to be the borough with most accidents. And evenings and night times are the most common time of the day for accidents with motor vehicles.
