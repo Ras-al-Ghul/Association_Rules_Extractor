@@ -35,7 +35,7 @@ python3 -m Association_Rules_Extractor <support> <confidence>
 <p>Where query is a string of words that you want to search and precision is a decimal value. For example,</p>
 
 ```
-python3 -m Association_Rules_Extractor 0.6 0.6
+python3 -m Association_Rules_Extractor 0.
 ```
 
 ## Dataset used:
@@ -43,7 +43,8 @@ NYPD Motor Vehicle Collisions Summary:
 https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/m666-sf2m
 
 ## Initial processing of data to generate INTEGRATED_DATASET.csv:
-1. Columns chosen along with the processing done: 
+1. Columns chosen along with the processing done:
+- The data of year>=2018 is considered 
 - Time at which the crash occured: bin the CRASH TIME column into early-morning (4<=hour<=6), morning (7<=hour<=11), afternoon(12<=hour<=15) and night(19<=hour<=3), where hour is the hour in which accident occured. hour is the hour picked as interger after splitting the CRASH TIME with ':'
 - Borough: Picked from BOROUGH column. the string is stripped, converted to lower characters, all ' ','/' are replaced with '_'. if column is empty nothing is added to the row.
 - Zipcode: Picked from ZIP CODE column. If column is empty nothing is added to the row.
