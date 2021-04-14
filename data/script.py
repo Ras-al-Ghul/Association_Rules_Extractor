@@ -17,21 +17,31 @@ def getTime(row):
 def getPersonInjuredOrKilled(row):
     data = []
 
-    if int(row[12]) > 0:
-        data.append('pedestrain_injured')
-    if int(row[13]) > 0:
-        data.append('pedestrain_killed')
-    if int(row[14]) > 0:
-        data.append('cyclist_injured')
-    if int(row[15]):
-        data.append('cyclist_killed')
-    if int(row[16]) > 0:
-        data.append('motorist_injured')
-    if int(row[17]):
-        data.append('motorist_killed')
+    # if int(row[12]) > 0:
+    #     data.append('pedestrain_injured')
+    # if int(row[13]) > 0:
+    #     data.append('pedestrain_killed')
+    # if int(row[14]) > 0:
+    #     data.append('cyclist_injured')
+    # if int(row[15]):
+    #     data.append('cyclist_killed')
+    # if int(row[16]) > 0:
+    #     data.append('motorist_injured')
+    # if int(row[17]):
+    #     data.append('motorist_killed')
 
-    if len(data) == 0:
-        data.append('no_injuries_or_deaths')
+    if int(row[10])>0: #or int(row[14])>0 or int(row[16])>0:
+        data.append('person_injured')
+    # else:
+    #     data.append('no_injuries')
+
+    if int(row[11])>0:# or int(row[15])>0 or int(row[17])>0:
+        data.append('person_killed')
+    # else:
+    #     data.append('no_deaths')
+
+    # if len(data) == 0:
+    #     data.append('no_injuries_or_deaths')
     return data
 
 def getReason(row):
@@ -61,12 +71,13 @@ def getZip(row):
 def getVehicles(row):
     data = set()
     if row[24] != '':
-        vehicles = row[24].strip().lower().replace(' ', '_')
-        data = data.union(set(vehicles.split('/')))
+        data.add(row[24].strip().lower().replace(' ', '_').replace('/', '_'))
+
 
     if row[25] != '':
-        vehicles = row[25].strip().lower().replace(' ', '_')
-        data = data.union(set(vehicles.split('/')))
+        data.add(row[25].strip().lower().replace(' ', '_').replace('/', '_'))
+        # vehicles = row[25].strip().lower().replace(' ', '_')
+        # data = data.union(set(vehicles.split('/')))
 
     return list(data)
 
