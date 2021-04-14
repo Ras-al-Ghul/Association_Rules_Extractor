@@ -75,8 +75,6 @@ This would give a lot of data from which we could make conclusions.
 
 ## Conclusions from the above run:
 
-## Conclusions from the above run:
-
 Some interesting mined associations are:
 <ol>
 <li> ['following_too_closely'] => ['sedan'] (Conf: 67.42%, Supp: 6.08%) </li>
