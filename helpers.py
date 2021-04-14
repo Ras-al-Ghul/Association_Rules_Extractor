@@ -2,7 +2,7 @@
 import csv, os
 
 def load_csv():
-	with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/INTEGRATED_DATASET2.csv'), newline='') as csvfile:
+	with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/INTEGRATED_DATASET.csv'), newline='') as csvfile:
 		datareader = csv.reader(csvfile, delimiter=',')
 		next(datareader)
 

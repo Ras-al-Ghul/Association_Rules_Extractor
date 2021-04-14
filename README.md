@@ -1,3 +1,5 @@
+# Project done by
+Dipankar Niranjan dn2502, Nidheesha Amedapu nra2125
 # Association_Rules_Extractor
 Code to extract Association Rules from a dataset using the Apriori algorithm
 
@@ -36,30 +38,24 @@ python3 -m Association_Rules_Extractor <support> <confidence>
 python3 -m Association_Rules_Extractor 0.6 0.6
 ```
 
-## Design
+## Dataset used:
+NYPD Motor Vehicle Collisions Summary:
+https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/m666-sf2m
 
-<ol>
-<li>search_scrape.py :
-   <ul>
-    <li>Sends a google query.</li> 
-    <li>Extracts the summary, title and contents of the query results.</li>
-    <li>Gets user feed back on the document relevance.</li>
-    <li>Helpers to process text - lower case, eliminate punctuations, etc. </li>
-   </ul>
-</li>
-<li>indexer.py
-  <ul>
-    <li>Extracts the vocabulary</li>
-    <li>Gets list of stop words from stop_words.txt</li>
-    <li>Builds tfidf of the summary, title and content using TfidfVectorizer from scikit-learn.</li>
-  </ul>
-</li>
-<li>rocchio.py
-  <ul>
-    <li>Uses the tfidf and bigram data and suggests the best words for query expansion</li>
-  </ul>
-</li>
-</ol>
+## Initial processing of data to generate INTEGRATED_DATASET.csv:
+1. Columns chosen: 
+- Time at which the crash occured
+- Borough
+- Zipcode
+- pedestrains injured
+- pedestrains killed
+- cyclist injured
+- cyclist killed
+- motorcyclist injured
+- motorcyclist killed
+- reason
+- kind of vehicles
+
 
 ## Algorithm
 
