@@ -12,6 +12,7 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
 <li>__init__.py</li>
 <li>__main__.py</li>
 <li>apriori.py</li>
+<li>helper.py</li>
 <li>README.md</li>
 <li>requirements.txt</li>
 </ol>
