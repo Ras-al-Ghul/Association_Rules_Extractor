@@ -3,13 +3,15 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
 
 ## Files
 <ol>
-<li>query_expansion
+<li>data
   <ul>
-    <li>__init__.py</li>
-    <li>__main__.py</li>
-    <li>apriori.py</li>
+    <li>INTEGRATED_DATASET.csv</li>
+    <li>script.py</li>
   </ul>
 </li>
+<li>__init__.py</li>
+<li>__main__.py</li>
+<li>apriori.py</li>
 <li>README.md</li>
 <li>requirements.txt</li>
 </ol>
