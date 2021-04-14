@@ -16,6 +16,7 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
 <li>apriori.py</li>
 <li>helper.py</li>
 <li>README.md</li>
+<li>example-run.txt</li>
 </ol>
 
 ## Steps to install and run
