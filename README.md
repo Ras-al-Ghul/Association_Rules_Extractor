@@ -38,6 +38,10 @@ python3 -m Association_Rules_Extractor <support> <confidence>
 python3 -m Association_Rules_Extractor 0.6 0.6
 ```
 
+## Dataset used:
+NYPD Motor Vehicle Collisions Summary:
+https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/m666-sf2m
+
 ## Design
 
 <ol>
