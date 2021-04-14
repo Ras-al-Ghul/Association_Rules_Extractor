@@ -81,7 +81,10 @@ def getVehicles(row):
         # vehicles = row[25].strip().lower().replace(' ', '_')
         # data = data.union(set(vehicles.split('/')))
 
-    return list(data)
+    final_data = list(data)
+    final_data = ['suv' if 'station_wagon' in item or 'sport_utility_vehicle' in item else item for item in final_data]
+
+    return final_data
 
 def isRecentData(row):
     year = int(row[0].split('/')[2])
