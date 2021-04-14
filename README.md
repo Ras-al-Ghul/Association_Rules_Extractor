@@ -27,12 +27,12 @@ Code to extract Association Rules from a dataset using the Apriori algorithm
 <p>Run the program using the following command.</p>
 
 ```
-python3 -m query_expansion <query> <precision>
+python3 -m Association_Rules_Extractor <support> <confidence>
 ```
 <p>Where query is a string of words that you want to search and precision is a decimal value. For example,</p>
 
 ```
-python3 -m query_expansion "this is the query" 0.9
+python3 -m Association_Rules_Extractor 0.6 0.6
 ```
 
 ## Design
