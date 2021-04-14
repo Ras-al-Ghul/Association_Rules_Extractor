@@ -51,7 +51,7 @@ https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/
 - <b>Borough:</b> Picked from BOROUGH column. the string is stripped, converted to lower characters, all ' ','/' are replaced with '_'. if column is empty nothing is added to the row.
 - <b>Zipcode:</b> Picked from ZIP CODE column. If column is empty nothing is added to the row.
 - <b>Injured:</b> Picked up from NUMBER OF PERSONS INJURED column. 'person_injured' is added to the row if the columns value is > 0.
-- <b>Killed:</b> Picked up from NUMBER OF PERSONS CYCLIST KILLED column. 'person_killed' is added to the row if the column value is > 0.
+- <b>Killed:</b> Picked up from NUMBER OF PERSONS CYCLIST KILLED column. 'person_killed' is added to the row if the column value is > 0. If the column value is empty, nothing is added to the row.
 - <b>Reason:</b> Picked up from CONTRIBUTING FACTOR VEHICLE 1 column. If CONTRIBUTING FACTOR VEHICLE 1 is 'Unspecified' or empty, value is picked up from CONTRIBUTING FACTOR VEHICLE 2. If CONTRIBUTING FACTOR VEHICLE 2 is also 'Unspecified' or empty, nothing is added to the row. The string value added to the row is stripped and the ' ' and '/' characters are replaced with '_'
 - <b>Kind of vehicles:</b> Picked up from VEHICLE TYPE CODE 1 and VEHICLE TYPE CODE 2. If both the columns are empty nothing is added to the row. The string values added to the row are stripped and ' ' and '/' are replaced with '_'.
 
