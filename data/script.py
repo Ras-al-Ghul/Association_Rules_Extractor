@@ -3,7 +3,7 @@ import csv
 def getTime(row):
     #print(row[1].split(':'))
     hour = int(row[1].split(':')[0])
-    if hour > 0 and hour <= 6:
+    if hour >= 0 and hour <= 6:
         return "early_morning"
     if hour > 6 and hour <= 12:
         return "morning"
@@ -11,7 +11,7 @@ def getTime(row):
         return "afternoon"
     if hour > 16 and hour <= 19:
         return "evening"
-    if hour > 18 and hour <= 24:
+    if hour > 19 and hour <= 23:
         return "night"
 
 def getPersonInjuredOrKilled(row):
@@ -78,11 +78,10 @@ with open('Motor_Vehicle_Collisions_-_Crashes.csv', newline='') as csvfile:
         #print(data)
 
 
-with open('INTEGRATED_DATASET.csv',  mode='w') as csvfile:
-    employee_writer = csv.writer(csvfile, delimiter=',')
+with open('INTEGRATED_DATASET.csv', mode='w', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',')
 
-    for row in filtered_data:
-        employee_writer.writerow(row)
+    writer.writerows(filtered_data)
 
     #employee_writer.writerow(['Erica Meyers', 'IT', 'March'])
 
