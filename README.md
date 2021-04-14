@@ -43,8 +43,8 @@ NYPD Motor Vehicle Collisions Summary:
 https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/m666-sf2m
 
 ## Initial processing of data to generate INTEGRATED_DATASET.csv:
-1. Columns chosen: 
-- Time at which the crash occured
+1. Columns chosen along with the processing done: 
+- Time at which the crash occured: bin the CRASH TIME column into early-morning (4<=hour<=6), morning (7<=hour<=11), afternoon(12<=hour<=15) and night(19<=hour<=3), where hour is the hour in which accident occured. hour is the hour picked as interger after splitting the CRASH TIME with ':'
 - Borough
 - Zipcode
 - pedestrains injured
