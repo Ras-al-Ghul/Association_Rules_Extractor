@@ -46,7 +46,7 @@ https://data.cityofnewyork.us/NYC-BigApps/NYPD-Motor-Vehicle-Collisions-Summary/
 
 ## Initial processing of data to generate INTEGRATED_DATASET.csv:
 1. Columns chosen along with the processing done:
-- The data of <b>year>=2018</b> is considered 
+- The data of <b>year>=2017</b> is considered 
 - <b>Time at which the crash occured:</b> bin the CRASH TIME column into early-morning (4<=hour<=6), morning (7<=hour<=11), afternoon(12<=hour<=15) and night(19<=hour<=3), where hour is the hour in which accident occured. hour is the hour picked as interger after splitting the CRASH TIME with ':'
 - <b>Borough:</b> Picked from BOROUGH column. the string is stripped, converted to lower characters, all ' ','/' are replaced with '_'. if column is empty nothing is added to the row.
 - <b>Zipcode:</b> Picked from ZIP CODE column. If column is empty nothing is added to the row.
