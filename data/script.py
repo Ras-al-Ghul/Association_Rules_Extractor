@@ -3,15 +3,15 @@ import csv
 def getTime(row):
     #print(row[1].split(':'))
     hour = int(row[1].split(':')[0])
-    if hour >= 0 and hour <= 6:
+    if hour >= 4 and hour <= 6:
         return "early_morning"
-    if hour > 6 and hour <= 12:
+    if hour >= 7 and hour <= 11:
         return "morning"
-    if hour > 12 and hour <= 16:
+    if hour >= 12 and hour <= 15:
         return "afternoon"
-    if hour > 16 and hour <= 19:
+    if hour >= 16 and hour <= 19:
         return "evening"
-    if hour > 19 and hour <= 23:
+    if hour >= 20 and hour <= 23 or hour >= 0 and hour <= 3:
         return "night"
 
 def getPersonInjuredOrKilled(row):
@@ -44,6 +44,20 @@ def getReason(row):
     else:
         return None
 
+def getBorough(row):
+    row[2] = row[2].strip()
+    if row[2] != '':
+        return row[2].strip().lower().replace(' ', '_').replace('/', '_')
+    else:
+        return None
+
+def getZip(row):
+    row[3] = row[3].strip()
+    if row[3] != '':
+        return row[3].strip()
+    else:
+        return None
+
 def getVehicles(row):
     data = set()
     if row[24] != '':
@@ -56,26 +70,39 @@ def getVehicles(row):
 
     return list(data)
 
+def isRecentData(row):
+    year = int(row[0].split('/')[2])
+    return year >= 2018
+
 with open('Motor_Vehicle_Collisions_-_Crashes.csv', newline='') as csvfile:
     datareader = csv.reader(csvfile, delimiter=',')
     next(datareader)
     filtered_data = []
     for row in datareader:
-        data = []
+        if isRecentData(row):
+            data = []
 
-        data.append(getTime(row))
+            data.append(getTime(row))
 
-        data.extend(getPersonInjuredOrKilled(row))
+            b = getBorough(row)
+            if b is not None:
+                data.append(b)
 
-        reason = getReason(row)
-        if reason is not None:
-            data.append(reason)
+            zip = getZip(row)
+            if zip is not None:
+                data.append(zip)
 
-        data.extend(getVehicles(row))
+            data.extend(getPersonInjuredOrKilled(row))
 
-        filtered_data.append(data)
+            reason = getReason(row)
+            if reason is not None:
+                data.append(reason)
 
-        #print(data)
+            data.extend(getVehicles(row))
+
+            filtered_data.append(data)
+
+            #print(data)
 
 
 with open('INTEGRATED_DATASET.csv', mode='w', newline='') as csvfile:
