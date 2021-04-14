@@ -30,12 +30,12 @@ def getPersonInjuredOrKilled(row):
     # if int(row[17]):
     #     data.append('motorist_killed')
 
-    if int(row[10])>0: #or int(row[14])>0 or int(row[16])>0:
+    if int(row[12])>0 or int(row[14])>0 or int(row[16])>0:
         data.append('person_injured')
     # else:
     #     data.append('no_injuries')
 
-    if int(row[11])>0:# or int(row[15])>0 or int(row[17])>0:
+    if int(row[13])>0 or int(row[15])>0 or int(row[17])>0:
         data.append('person_killed')
     # else:
     #     data.append('no_deaths')
@@ -72,6 +72,8 @@ def getVehicles(row):
     data = set()
     if row[24] != '':
         data.add(row[24].strip().lower().replace(' ', '_').replace('/', '_'))
+        # vehicles = row[24].strip().lower().replace(' ', '_')
+        # data = data.union(set(vehicles.split('/')))
 
 
     if row[25] != '':
@@ -83,7 +85,7 @@ def getVehicles(row):
 
 def isRecentData(row):
     year = int(row[0].split('/')[2])
-    return year >= 2018
+    return year >= 2017
 
 with open('Motor_Vehicle_Collisions_-_Crashes.csv', newline='') as csvfile:
     datareader = csv.reader(csvfile, delimiter=',')
